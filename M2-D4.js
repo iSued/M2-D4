@@ -15,7 +15,7 @@ let APP = {
     // clear user list and user section
     this.members = [];
     $("#memberList").html("");
-    var self = this;
+    let self = this;
 
     // clear team section
     $("#teamarea").html("");
@@ -32,7 +32,7 @@ let APP = {
       .on("click", ".btn-remove", function (e) {
         e.stopPropagation();
         // remove the member in team
-        var name = $(this).parent().find("span").text();
+        let name = $(this).parent().find("span").text();
         $(this).parent().remove();
 
         // add the user to global user list
@@ -55,7 +55,7 @@ let APP = {
 
     for (var i = 0; i < number; i++) {
       // get the team template and show it
-      var team = $("#team-template").html();
+      let team = $("#team-template").html();
       $("#teamarea").append(team);
 
       // make a team
@@ -73,7 +73,7 @@ let APP = {
   // assign a member to team
   assignTeam: function (name, team) {
     // get the user temlpate and add it to team
-    var usr = $("#user-template").html();
+    let usr = $("#user-template").html();
     $(team).find(".memberlist").append(usr);
     $(team).find(".memberlist > li:last-child").find("span").text(name);
   },
